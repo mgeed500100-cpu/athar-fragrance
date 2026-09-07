@@ -1,10 +1,10 @@
 {
     "name": {
-        "ar": "رائد",
-        "en": "Theme Raed"
+        "ar": "أثر — للعطور",
+        "en": "Athar Fragrance"
     },
-    "repository": "https://github.com/SallaApp/theme-raed",
-    "author_email": "support@salla.sa",
+    "repository": "https://github.com/mgeed500100-cpu/athar-fragrance",
+    "author_email": "295204176+mgeed500100-cpu@users.noreply.github.com",
     "features": [
         "mega-menu",
         "fonts",
@@ -1138,12 +1138,191 @@
                     "maxLength": 30
                 }
             ]
+        },
+        {
+            "key": "f37be469-27d1-4bb7-91cb-7a230b14a591",
+            "title": {
+                "ar": "أثر | رحلة العطر",
+                "en": "Athar | Fragrance Journey"
+            },
+            "icon": "sicon-image-carousel",
+            "path": "home.athar-journey",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان",
+                    "icon": "sicon-format-text-alt",
+                    "multilanguage": true,
+                    "required": false,
+                    "value": "رحلة في أثر العطر",
+                    "maxLength": 150
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "وصف قصير",
+                    "icon": "sicon-format-text-alt",
+                    "multilanguage": true,
+                    "required": false,
+                    "value": "من أول نفحة إلى آخر أثر",
+                    "maxLength": 500
+                },
+                {
+                    "id": "scenes",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "فصول الرحلة",
+                    "item_label": "عطر",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 5,
+                    "value": [],
+                    "fields": [
+                        {
+                            "id": "scenes.image",
+                            "type": "string",
+                            "format": "image",
+                            "icon": "sicon-image",
+                            "label": "صورة العبوة",
+                            "description": "صورة مملوكة لك 800×1000 بكسل. الألوان حسب الترتيب: كريمي، وردي، عنبري، خمري، ليلي.",
+                            "required": true,
+                            "value": null
+                        },
+                        {
+                            "id": "scenes.title",
+                            "type": "string",
+                            "format": "text",
+                            "label": "اسم العطر",
+                            "icon": "sicon-format-text-alt",
+                            "multilanguage": true,
+                            "required": true,
+                            "value": null,
+                            "maxLength": 150
+                        },
+                        {
+                            "id": "scenes.story",
+                            "type": "string",
+                            "format": "textarea",
+                            "label": "قصة مختصرة",
+                            "icon": "sicon-format-text-alt",
+                            "multilanguage": true,
+                            "required": false,
+                            "value": null,
+                            "maxLength": 500
+                        },
+                        {
+                            "id": "scenes.top",
+                            "type": "string",
+                            "format": "text",
+                            "label": "النوتات الافتتاحية",
+                            "icon": "sicon-format-text-alt",
+                            "multilanguage": true,
+                            "required": false,
+                            "value": null,
+                            "maxLength": 150
+                        },
+                        {
+                            "id": "scenes.heart",
+                            "type": "string",
+                            "format": "text",
+                            "label": "نوتات القلب",
+                            "icon": "sicon-format-text-alt",
+                            "multilanguage": true,
+                            "required": false,
+                            "value": null,
+                            "maxLength": 150
+                        },
+                        {
+                            "id": "scenes.base",
+                            "type": "string",
+                            "format": "text",
+                            "label": "النوتات الأساسية",
+                            "icon": "sicon-format-text-alt",
+                            "multilanguage": true,
+                            "required": false,
+                            "value": null,
+                            "maxLength": 150
+                        },
+                        {
+                            "type": "items",
+                            "icon": "sicon-link",
+                            "label": "الرابط",
+                            "id": "scenes.url",
+                            "value": null,
+                            "description": null,
+                            "required": false,
+                            "format": "variable-list",
+                            "searchable": true,
+                            "source": "custom",
+                            "sources": [
+                                {
+                                    "label": "منتج",
+                                    "key": "products",
+                                    "value": "products"
+                                },
+                                {
+                                    "label": "منتجات مع وسم",
+                                    "key": "products_tags",
+                                    "value": "products_tags"
+                                },
+                                {
+                                    "label": "تصنيف",
+                                    "key": "categories",
+                                    "value": "categories"
+                                },
+                                {
+                                    "label": "ماركة تجارية",
+                                    "key": "brands",
+                                    "value": "brands"
+                                },
+                                {
+                                    "label": "صفحة تعريفية",
+                                    "key": "pages",
+                                    "value": "pages"
+                                },
+                                {
+                                    "label": "مقالة",
+                                    "key": "blog_articles",
+                                    "value": "blog_articles"
+                                },
+                                {
+                                    "label": "تصنيف ضمن المدونة",
+                                    "key": "blog_categories",
+                                    "value": "blog_categories"
+                                },
+                                {
+                                    "label": "التخفيضات",
+                                    "key": "offers_link",
+                                    "value": "offers_link"
+                                },
+                                {
+                                    "label": "الماركات التجارية",
+                                    "key": "brands_link",
+                                    "value": "brands_link"
+                                },
+                                {
+                                    "label": "المدونة",
+                                    "key": "blog_link",
+                                    "value": "blog_link"
+                                },
+                                {
+                                    "label": "رابط خارجي",
+                                    "key": "custom",
+                                    "value": "custom"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ],
-    "support_url": "https://salla.com/",
+    "support_url": "https://github.com/mgeed500100-cpu/athar-fragrance/issues",
     "description": {
-        "ar": "مجموعة كبيرة من المزايا لدعم تجارتك وتقديم تجربة تسوق مثيرة لعملائك",
-        "en": "A wide range of features to support your business and provide an exciting shopping experience for your customers"
+        "ar": "ثيم عطور فاخر برحلة عطرية تفاعلية — قيد التطوير",
+        "en": "Premium editorial fragrance theme — in development"
     }
 }
-

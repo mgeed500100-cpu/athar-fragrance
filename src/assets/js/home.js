@@ -1,4 +1,5 @@
 import "lite-youtube-embed";
+import "./athar/fragrance-journey";
 import BasePage from "./base-page";
 import Lightbox from "fslightbox";
 window.fslightbox = Lightbox;

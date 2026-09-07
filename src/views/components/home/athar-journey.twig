@@ -1,0 +1,32 @@
+{# Images/links are merchant-selected. No simulated prices or reviews. #}
+{% if component.scenes|length %}
+<athar-fragrance-journey component-id="{{ componentId }}" class="s-block athar-journey">
+    <header class="athar-journey__heading">
+        {% if component.title %}<h2>{{ component.title }}</h2>{% endif %}
+        {% if component.description %}<p class="athar-journey__story">{{ component.description }}</p>{% endif %}
+    </header>
+    <div class="athar-journey__layout">
+        <div class="athar-journey__visual" aria-hidden="true">
+            {% for scene in component.scenes %}
+                <img data-journey-bottle class="athar-journey__bottle" src="{{ scene.image }}" alt="" width="800" height="1000" loading="lazy" decoding="async">
+            {% endfor %}
+        </div>
+        <div class="athar-journey__steps">
+            {% for scene in component.scenes %}
+            <article class="athar-journey__step" data-journey-step>
+                <img class="athar-journey__fallback" src="{{ scene.image }}" alt="{{ scene.title|e('html_attr') }}" width="800" height="1000" loading="lazy" decoding="async">
+                <span class="athar-journey__number" aria-hidden="true">0{{ loop.index }} / 0{{ loop.length }}</span>
+                <h3>{{ scene.title }}</h3>
+                {% if scene.story %}<p class="athar-journey__story">{{ scene.story }}</p>{% endif %}
+                <dl>
+                    {% if scene.top %}<div><dt>{{ trans('athar.journey.top') }}</dt><dd>{{ scene.top }}</dd></div>{% endif %}
+                    {% if scene.heart %}<div><dt>{{ trans('athar.journey.heart') }}</dt><dd>{{ scene.heart }}</dd></div>{% endif %}
+                    {% if scene.base %}<div><dt>{{ trans('athar.journey.base') }}</dt><dd>{{ scene.base }}</dd></div>{% endif %}
+                </dl>
+                {% if scene.url %}<a class="athar-journey__cta" href="{{ scene.url }}">{{ trans('athar.journey.discover') }}</a>{% endif %}
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</athar-fragrance-journey>
+{% endif %}
