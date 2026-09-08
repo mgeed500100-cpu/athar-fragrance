@@ -1,6 +1,9 @@
-# v0.3 verification and limitations
+# v0.3.1 verification and limitations
 
-- Automatic homepage uses bundled original artwork. Existing merchant components remain available behind the athar_auto_home switch.
+- Preview activation fix: Athar now renders unless the new explicit opt-out settings athar_use_editor_home / athar_use_classic_header are enabled. Missing/null/false values no longer disable the design. This addresses a plausible activation failure; the live preview's setting values were not accessible, so its root cause is not confirmed.
+- The document body includes data-athar-build="0.3.1" to distinguish stale assets/templates from setting issues.
+
+- Automatic homepage uses bundled original artwork. Existing merchant components remain available by enabling athar_use_editor_home.
 - Implemented adaptive header, cinematic hero, pausable scent marquee, native product lists with redesigned cards, scent bento, campaign, five-scene sticky journey, gifts, editorial cards, genuine store reviews and native footer integrations.
 - Arabic/English copy, touch-visible shopping controls and reduced-motion fallback are included.
 - Product lists search the real catalog (default keyword: عطر). Prices, stock, reviews, wishlist and cart remain native. Artistic bottles have no fabricated prices or ratings.

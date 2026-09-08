@@ -35,24 +35,24 @@
       "value": null
     },
     {
-      "id": "athar_auto_home",
+      "id": "athar_use_editor_home",
       "type": "boolean",
       "format": "switch",
-      "label": "تفعيل واجهة أثر التلقائية (لا تحتاج ترتيب عناصر)",
+      "label": "استخدام ترتيب المحرر بدل واجهة أثر التلقائية",
       "icon": "sicon-toggle-off",
       "required": false,
-      "value": true,
-      "selected": true
+      "value": false,
+      "selected": false
     },
     {
-      "id": "athar_header",
+      "id": "athar_use_classic_header",
       "type": "boolean",
       "format": "switch",
-      "label": "تفعيل هيدر أثر",
+      "label": "استخدام الهيدر الكلاسيكي بدل هيدر أثر",
       "icon": "sicon-toggle-off",
       "required": false,
-      "value": true,
-      "selected": true
+      "value": false,
+      "selected": false
     },
     {
       "id": "athar_brand_name",

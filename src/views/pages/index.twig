@@ -7,7 +7,7 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    {% if theme.settings.get('athar_auto_home', true) %}
+    {% if not theme.settings.get('athar_use_editor_home', false) %}
         {% include 'components.athar.storefront' %}
     {% else %}
         {% component home %}

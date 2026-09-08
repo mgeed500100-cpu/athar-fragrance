@@ -6,7 +6,7 @@
 | cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
 #}
 {% set important_links = theme.settings.get('important_links') %}
-{% if theme.settings.get('athar_header', true) %}
+{% if not theme.settings.get('athar_use_classic_header', false) %}
 {% include 'components.header.athar-header' %}
 {% else %}
 <header data-testid="store-header" class="store-header">

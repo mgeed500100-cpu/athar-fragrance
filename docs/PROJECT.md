@@ -39,7 +39,7 @@ Use bundled original generated artwork by default, with optional merchant-owned 
 
 ## Commercial requirements
 
-Disable athar_auto_home to use reorderable/removable editor components; the approved automatic layout requires no manual banner setup. Homepage color changes
+Enable athar_use_editor_home to use reorderable/removable editor components; the approved automatic layout requires no manual banner setup. Homepage color changes
 must not depend on fixed section indices. Future adaptive header should use explicit
 section contrast tokens, including when components are repeated or reordered.
 Product/collection/search/cart/account pages must receive the same visual system.
