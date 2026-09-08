@@ -80,3 +80,10 @@ test('motion has lifecycle cleanup and reduced-motion handling', () => {
     assert.match(js, /cancelAnimationFrame/);
     assert.doesNotMatch(js, /preventDefault|innerHTML|fetch\(/);
 });
+test('Athar skin covers the native mobile menu and light-footer mode', () => {
+    const styles = read('src/assets/styles/06-athar/storefront.scss');
+    assert.match(styles, /\.athar-theme \.mm-ocd__content/);
+    assert.match(styles, /\.athar-theme \.mm-spn\.mm-spn--light/);
+    assert.match(styles, /body\.athar-theme\.footer-is-light \.store-footer__inner/);
+    assert.match(styles, /\.athar-theme \.store-footer \.copyright-text \*/);
+});

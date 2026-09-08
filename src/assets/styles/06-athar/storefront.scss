@@ -195,13 +195,29 @@ athar-fragrance-journey.athar-signature { padding: 80px max(24px, calc((100% - 1
 .athar-connect > p { line-height: 1.9; margin-block: 12px; }
 .athar-connect salla-social { display: flex; justify-content: center; margin-top: 24px; }
 
-.athar-theme .store-footer { background: var(--athar-night); color: var(--athar-cream); border: 0; margin-top: 0; }
-.athar-footer-intro { max-width: 1280px; margin-inline: auto; padding: 65px 24px; border-bottom: 1px solid #51453b; }
+.athar-theme .store-footer { background: var(--athar-night) !important; color: var(--athar-cream); border: 0; margin-top: 0; isolation: isolate; }
+.athar-footer-intro { max-width: 1280px; margin-inline: auto; padding: 65px 24px; border-bottom: 1px solid rgb(243 239 229 / 20%); }
 .athar-footer-intro > p { font-size: clamp(34px,5vw,72px); line-height: 1.5; margin-block: 16px; font-weight: 400; }
-.athar-theme .store-footer__inner { background: transparent; border-bottom: 1px solid #51453b; padding-block: 50px; }
-.athar-theme .store-footer h3 { color: #fff2e6; font-size: 19px; }
-.athar-theme .store-footer a, .athar-theme .store-footer .s-contacts-item { color: #ece0d5; }
-.athar-theme .store-footer .copyright-text { color: #c7b8aa; }
+.athar-theme .store-footer__inner,
+body.athar-theme.footer-is-light .store-footer__inner {
+    background: linear-gradient(135deg, var(--athar-night) 0%, #171110 58%, #32151d 100%) !important;
+    border-bottom: 1px solid rgb(243 239 229 / 20%);
+    padding-block: 56px;
+}
+.athar-theme .store-footer__inner > .container { align-items: start; }
+.athar-theme .store-footer h3 { color: #fff8ed !important; font-size: 19px; font-weight: 500; letter-spacing: .01em; }
+.athar-theme .store-footer p,
+.athar-theme .store-footer li,
+.athar-theme .store-footer a,
+.athar-theme .store-footer .s-contacts-item { color: #ece0d5 !important; }
+.athar-theme .store-footer a { text-decoration-color: rgb(236 224 213 / 45%); }
+.athar-theme .store-footer .social-link { color: #fff8ed !important; border-color: rgb(255 248 237 / 35%); min-width: 38px; min-height: 38px; }
+.athar-theme .store-footer .copyright-text,
+.athar-theme .store-footer .copyright-text * { color: #c7b8aa !important; }
+.athar-theme .store-footer > .container { background: var(--athar-night); color: var(--athar-cream); }
+.athar-theme .store-footer salla-contacts,
+.athar-theme .store-footer salla-menu,
+.athar-theme .store-footer salla-apps-icons { display: block; color: #ece0d5; }
 .athar-theme .container--products-list { padding-block-end: 60px; }
 .athar-theme .product-single { background: var(--athar-cream); }
 
@@ -288,6 +304,63 @@ athar-fragrance-journey.athar-signature { padding: 80px max(24px, calc((100% - 1
     .athar-editorial__card > img { height: 340px; }
     .athar-editorial__card--bottle .athar-bottle { width: 204px; height: 340px; }
     .athar-theme .athar-footer-intro { padding: 50px 24px; }
+    .athar-theme .store-footer__inner,
+    body.athar-theme.footer-is-light .store-footer__inner { padding-block: 40px; }
+}
+
+/* Editorial mobile navigation: preserve Salla's nested-menu behavior, change only its skin. */
+@media (max-width:1024px) {
+    .athar-theme .mm-ocd__content {
+        width: min(88vw, 430px);
+        background: var(--athar-night);
+        color: var(--athar-cream);
+        box-shadow: 0 0 70px rgb(0 0 0 / 35%);
+    }
+    .athar-theme .mm-ocd__backdrop { background: rgb(24 12 14 / 62%); backdrop-filter: blur(3px); }
+    .athar-theme .mm-spn.mm-spn--light,
+    .athar-theme .mm-spn {
+        color: var(--athar-cream);
+        background:
+            radial-gradient(circle at 85% 12%, rgb(90 24 37 / 55%), transparent 34%),
+            linear-gradient(165deg, #211f1e 0%, #171110 70%);
+    }
+    .athar-theme .mm-spn.mm-spn--navbar::after {
+        color: #fff8ed;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: .02em;
+        border-bottom: 1px solid rgb(243 239 229 / 18%);
+        opacity: 1;
+    }
+    .athar-theme .mm-spn.mm-spn--navbar::before { border-color: #e8d9cc; }
+    .athar-theme .mm-spn li::after { border-color: rgb(243 239 229 / 14%); }
+    .athar-theme .mm-spn li > a,
+    .athar-theme .mm-spn li > span {
+        min-height: 62px;
+        padding: 17px 24px;
+        color: #f2e8dd;
+        font-size: 17px;
+        font-weight: 400;
+        transition: color 200ms ease, background 200ms ease, padding 200ms ease;
+    }
+    .athar-theme .mm-spn li > a:hover,
+    .athar-theme .mm-spn li > a:focus-visible {
+        color: #fff;
+        background: rgb(90 24 37 / 38%);
+        padding-inline-start: 30px;
+    }
+    .athar-theme .mm-spn li > a[href*='offer'] { color: #e5b9b4; }
+    .athar-theme .mm-spn li::before { border-color: #c9b6a6; }
+    .athar-theme .btn--close-sm.close-mobile-menu {
+        width: 44px;
+        height: 44px;
+        top: 10px;
+        inset-inline-start: 10px;
+        color: #fff8ed;
+        background: rgb(255 255 255 / 8%);
+        border: 1px solid rgb(255 255 255 / 18%);
+        border-radius: 50%;
+    }
 }
 @media (prefers-reduced-motion:reduce) {
     .athar-theme .athar-bento__card:hover > .athar-bottle { transform: translateX(-50%); }
