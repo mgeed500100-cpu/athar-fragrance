@@ -37,6 +37,18 @@ const initializeAthar = () => {
         });
     });
 
+    // Keep automatic storefronts compact when the connected demo catalog has no matching items.
+    document.querySelectorAll('.athar-products salla-products-list, .athar-product-story salla-products-list').forEach(list => {
+        const section = list.closest('.athar-products, .athar-product-story');
+        const syncCatalogState = () => {
+            const hasProducts = Boolean(list.querySelector('.s-product-card-entry'));
+            const hasFinishedEmpty = Boolean(list.querySelector('.s-products-list-placeholder'));
+            section?.classList.toggle('athar-catalog-empty', hasFinishedEmpty && !hasProducts);
+        };
+        new MutationObserver(syncCatalogState).observe(list, {childList:true, subtree:true});
+        syncCatalogState();
+    });
+
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver(entries => entries.forEach(entry => {
             if (entry.isIntersecting) {entry.target.classList.add('is-visible'); observer.unobserve(entry.target);}

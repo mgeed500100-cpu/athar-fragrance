@@ -1,4 +1,6 @@
-# v0.3.1 verification and limitations
+# v0.3.2 verification and limitations
+
+- Empty automatic product sections collapse after Salla confirms that no real catalog item matched. This removes large empty gaps in fresh demo stores while allowing populated sections to render normally.
 
 - Preview activation fix: Athar now renders unless the new explicit opt-out settings athar_use_editor_home / athar_use_classic_header are enabled. Missing/null/false values no longer disable the design. This addresses a plausible activation failure; the live preview's setting values were not accessible, so its root cause is not confirmed.
 - The document body includes data-athar-build="0.3.1" to distinguish stale assets/templates from setting issues.

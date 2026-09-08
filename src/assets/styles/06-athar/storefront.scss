@@ -96,6 +96,7 @@
 .athar-products--new { background: #e9e0d3; }
 .athar-catalog-notice { font-size: 13px; line-height: 1.8; margin-top: 18px; color: #655a52; }
 .athar-products salla-products-list { display: block; min-height: 120px; }
+.athar-products.athar-catalog-empty, .athar-product-story.athar-catalog-empty { display: none; }
 .athar-theme .s-products-list-wrapper { gap: 24px; }
 .athar-theme .s-product-card-entry { border: 0; border-radius: 3px; background: transparent; box-shadow: none; overflow: visible; }
 .athar-theme .s-product-card-vertical { transition: transform 300ms ease; }
