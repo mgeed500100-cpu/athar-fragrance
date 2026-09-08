@@ -32,6 +32,22 @@ test('theme editor exposes Athar components only', () => {
     assert.ok(theme.components.every(component => component.path.startsWith('home.athar-')));
     assert.equal(theme.features.some(feature => feature.startsWith('component-')), false);
 });
+test('merchant controls cover brand palette and automatic sections', () => {
+    const settingIds = new Set(theme.settings.map(setting => setting.id));
+    for (const id of ['athar_color_cream','athar_color_ink','athar_color_rose','athar_color_amber','athar_color_wine','athar_color_night']) assert.ok(settingIds.has(id), id);
+    for (const id of ['athar_show_products','athar_show_bento','athar_show_campaign','athar_show_journey','athar_show_gifts','athar_show_social']) assert.ok(settingIds.has(id), id);
+    const storefront = read('src/views/components/athar/storefront.twig');
+    assert.match(storefront, /athar_show_journey/);
+    assert.match(read('src/views/layouts/master.twig'), /--athar-cream:/);
+});
+test('merchant collections customize benefits, bento and editorial cards', () => {
+    for (const pathName of ['home.athar-benefits','home.athar-bento','home.athar-editorial']) {
+        const component = theme.components.find(item => item.path === pathName);
+        assert.ok(component.fields.some(field => field.type === 'collection'), pathName);
+    }
+    const products = theme.components.find(item => item.path === 'home.athar-products');
+    assert.ok(products.fields.some(field => field.id === 'products' && field.source === 'products'));
+});
 test('journey has bounded merchant-editable scenes and no price input', () => {
     const journey = theme.components.find(c => c.path === 'home.athar-journey');
     const scenes = journey.fields.find(f => f.id === 'scenes');
@@ -53,7 +69,7 @@ test('entry points include journey source and styles', () => {
 });
 test('all Athar storefront product sections filter the fragrance catalog', () => {
     const products = read('src/views/components/home/athar-products.twig');
-    assert.match(products, /source="search"/);
+    assert.match(products, /'selected' : 'search'/);
     assert.doesNotMatch(products, /source="\{\{ latest \? 'latest'/);
     assert.match(products, /athar_catalog_keyword/);
 });

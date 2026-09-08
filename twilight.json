@@ -16,6 +16,158 @@
   ],
   "settings": [
     {
+      "type": "static",
+      "format": "title",
+      "id": "athar_identity_title",
+      "value": "<h6>هوية أثر البصرية</h6>",
+      "variant": "h6"
+    },
+    {
+      "id": "athar_color_cream",
+      "type": "string",
+      "format": "color",
+      "label": "لون الخلفية الكريمية",
+      "required": false,
+      "value": "#f3efe5"
+    },
+    {
+      "id": "athar_color_ink",
+      "type": "string",
+      "format": "color",
+      "label": "لون النص الداكن",
+      "required": false,
+      "value": "#211c19"
+    },
+    {
+      "id": "athar_color_rose",
+      "type": "string",
+      "format": "color",
+      "label": "لون المرحلة الزهرية",
+      "required": false,
+      "value": "#dfc3bf"
+    },
+    {
+      "id": "athar_color_amber",
+      "type": "string",
+      "format": "color",
+      "label": "لون المرحلة العنبرية",
+      "required": false,
+      "value": "#ba895b"
+    },
+    {
+      "id": "athar_color_wine",
+      "type": "string",
+      "format": "color",
+      "label": "لون المرحلة الخمرية",
+      "required": false,
+      "value": "#5a1825"
+    },
+    {
+      "id": "athar_color_night",
+      "type": "string",
+      "format": "color",
+      "label": "لون المرحلة الليلية",
+      "required": false,
+      "value": "#211f1e"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "athar_sections_title",
+      "value": "<h6>أقسام الواجهة التلقائية</h6>",
+      "variant": "h6"
+    },
+    {
+      "id": "athar_show_benefits",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار شريط الروائح",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "athar_show_products",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار المنتجات الأكثر مبيعًا",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "athar_show_bento",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار تصنيفات الروائح",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "athar_show_campaign",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار الحملة التحريرية",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "athar_show_journey",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار رحلة العطر المتحركة",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "athar_show_new_products",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار المنتجات الجديدة",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "athar_show_gifts",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار قسم الهدايا",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "athar_show_product_story",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار قصة المنتج",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "athar_show_editorial",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار الدفتر التحريري",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "athar_show_social",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار التقييمات والتواصل",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
       "id": "athar_newsletter_url",
       "type": "string",
       "format": "text",
@@ -536,7 +688,31 @@
       },
       "icon": "sicon-image",
       "path": "home.athar-benefits",
-      "fields": []
+      "fields": [
+        {
+          "id": "items",
+          "type": "collection",
+          "format": "collection",
+          "label": "عبارات الشريط",
+          "item_label": "عبارة",
+          "required": false,
+          "minLength": 3,
+          "maxLength": 8,
+          "value": [],
+          "fields": [
+            {
+              "id": "items.text",
+              "type": "string",
+              "format": "text",
+              "label": "النص",
+              "multilanguage": true,
+              "required": true,
+              "maxLength": 50,
+              "value": null
+            }
+          ]
+        }
+      ]
     },
     {
       "key": "e20dc971-91fd-497b-abe2-773d78221002",
@@ -566,6 +742,37 @@
           "required": false,
           "multilanguage": true,
           "value": null
+        },
+        {
+          "type": "items",
+          "icon": "sicon-keyboard_arrow_down",
+          "label": "منتجات محددة (اختياري)",
+          "id": "products",
+          "format": "dropdown-list",
+          "description": "إن لم تختر منتجات سيستخدم الثيم كلمة البحث.",
+          "selected": [],
+          "options": [],
+          "required": false,
+          "multichoice": true,
+          "source": "products",
+          "searchable": true,
+          "maxLength": 8,
+          "minLength": 0,
+          "value": []
+        },
+        {
+          "id": "limit",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "عدد المنتجات",
+          "required": false,
+          "source": "Manual",
+          "selected": [{"label": "4", "value": 4, "key": "athar-products-4"}],
+          "options": [
+            {"label": "4", "value": 4, "key": "athar-products-4"},
+            {"label": "6", "value": 6, "key": "athar-products-6"},
+            {"label": "8", "value": 8, "key": "athar-products-8"}
+          ]
         }
       ]
     },
@@ -587,6 +794,57 @@
           "required": false,
           "multilanguage": true,
           "value": null
+        },
+        {
+          "id": "items",
+          "type": "collection",
+          "format": "collection",
+          "label": "بطاقات الروائح",
+          "item_label": "رائحة",
+          "required": false,
+          "minLength": 3,
+          "maxLength": 5,
+          "value": [],
+          "fields": [
+            {
+              "id": "items.image",
+              "type": "string",
+              "format": "image",
+              "label": "الصورة",
+              "required": false,
+              "value": null
+            },
+            {
+              "id": "items.title",
+              "type": "string",
+              "format": "text",
+              "label": "اسم الرائحة أو التصنيف",
+              "multilanguage": true,
+              "required": true,
+              "maxLength": 60,
+              "value": null
+            },
+            {
+              "id": "items.detail",
+              "type": "string",
+              "format": "text",
+              "label": "وصف قصير",
+              "multilanguage": true,
+              "required": false,
+              "maxLength": 80,
+              "value": null
+            },
+            {
+              "id": "items.keyword",
+              "type": "string",
+              "format": "text",
+              "label": "كلمة بحث المنتجات",
+              "multilanguage": true,
+              "required": false,
+              "maxLength": 60,
+              "value": null
+            }
+          ]
         }
       ]
     },
@@ -849,6 +1107,47 @@
           "required": false,
           "multilanguage": true,
           "value": null
+        },
+        {
+          "id": "items",
+          "type": "collection",
+          "format": "collection",
+          "label": "صور الدفتر",
+          "item_label": "صورة",
+          "required": false,
+          "minLength": 2,
+          "maxLength": 3,
+          "value": [],
+          "fields": [
+            {
+              "id": "items.image",
+              "type": "string",
+              "format": "image",
+              "label": "الصورة",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "items.title",
+              "type": "string",
+              "format": "text",
+              "label": "العنوان",
+              "multilanguage": true,
+              "required": true,
+              "maxLength": 80,
+              "value": null
+            },
+            {
+              "id": "items.keyword",
+              "type": "string",
+              "format": "text",
+              "label": "كلمة بحث الرابط",
+              "multilanguage": true,
+              "required": false,
+              "maxLength": 60,
+              "value": null
+            }
+          ]
         }
       ]
     },

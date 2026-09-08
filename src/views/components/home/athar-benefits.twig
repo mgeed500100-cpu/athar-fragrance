@@ -1,7 +1,11 @@
 <section class="athar-marquee" aria-label="{{ trans('athar.scents.label') }}" data-athar-surface="light">
     <div class="athar-marquee__window"><div class="athar-marquee__track">
         {% for copy in 0..1 %}<div class="athar-marquee__group" {% if copy %}aria-hidden="true"{% endif %}>
-            {% for scent in ['fresh','floral','woody','oud','night'] %}<span>{{ trans('athar.scents.' ~ scent) }}</span><span class="athar-marquee__star" aria-hidden="true">✳</span>{% endfor %}
+            {% if component.items|default([])|length %}
+                {% for item in component.items %}<span>{{ item.text }}</span><span class="athar-marquee__star" aria-hidden="true">✳</span>{% endfor %}
+            {% else %}
+                {% for scent in ['fresh','floral','woody','oud','night'] %}<span>{{ trans('athar.scents.' ~ scent) }}</span><span class="athar-marquee__star" aria-hidden="true">✳</span>{% endfor %}
+            {% endif %}
         </div>{% endfor %}
     </div></div>
     <button type="button" class="athar-marquee__pause" data-athar-pause aria-pressed="false" aria-label="{{ trans('athar.motion.pause') }}">Ⅱ</button>

@@ -10,9 +10,16 @@ class AtharFragranceJourney extends HTMLElement {
         let frame = 0;
         let visible = true;
         let active = -1;
+        const rootStyle = getComputedStyle(document.body);
+        const color = (name, fallback) => rootStyle.getPropertyValue(name).trim() || fallback;
+        const cream = color('--athar-cream', '#F3EFE5');
+        const ink = color('--athar-ink', '#211C19');
         const colors = [
-            ['#F3EFE5', '#211C19'], ['#D9AAA8', '#35131C'],
-            ['#A87545', '#17100A'], ['#5A1825', '#FFF8ED'], ['#11100F', '#F3EFE5'],
+            [cream, ink],
+            [color('--athar-rose', '#D9AAA8'), ink],
+            [color('--athar-amber', '#A87545'), ink],
+            [color('--athar-wine', '#5A1825'), '#FFF8ED'],
+            [color('--athar-night', '#11100F'), cream],
         ];
         const update = () => {
             frame = 0;

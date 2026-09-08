@@ -24,14 +24,14 @@ if (process.argv.includes('--templates-only')) {
             const context={component:{},theme:{mode:'live',settings:{get:(key,fallback)=>key==='athar_newsletter_url'?url:fallback}},store:{name:'Athar',url:'/',settings:{},social:[]}};
             const html=Twig.twig({ref:'components.athar.storefront'}).render(context);
             assert.equal((html.match(/data-journey-step/g)||[]).length,5);
-            assert.ok(html.includes('source="latest"'));
+            assert.ok(html.includes('source="search"'));
             assert.ok(html.includes('row-cards'));
             assert.equal(html.includes('class="athar-section athar-newsletter"'),url==='https://example.com/signup');
             assert.ok(!html.includes('javascript:'));
             assert.ok(!html.includes('athar.story.title'));
         }
     }
-    console.log('PASS: Arabic/English composition, five scenes, latest source, native spotlight and missing/unsafe/HTTPS signup settings.');
+    console.log('PASS: Arabic/English composition, five scenes, fragrance-filtered products, native spotlight and missing/unsafe/HTTPS signup settings.');
     process.exit(0);
 }
 const server=http.createServer((req,res)=>{

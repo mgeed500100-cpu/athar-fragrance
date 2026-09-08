@@ -1,4 +1,8 @@
-# v0.4.1 verification and limitations
+# v0.5.0 verification and limitations
+
+- Added merchant color controls for the cream, ink, floral, amber, burgundy and night states; the scroll journey reads the same palette.
+- Added show/hide controls for every major automatic-home section.
+- Added merchant collections for the scent strip, Bento cards and editorial gallery, plus optional hand-picked products and product-count control.
 
 - Upgraded both official Salla Twilight packages to 2.14.575 and regenerated the lockfile.
 - Added the required `salla-review-factors-tags` integration to the customer order page and a regression test covering both marketplace requirements.
@@ -9,7 +13,7 @@
 - Empty automatic product sections collapse after Salla confirms that no real catalog item matched. This removes large empty gaps in fresh demo stores while allowing populated sections to render normally.
 
 - Preview activation fix: Athar now renders unless the new explicit opt-out settings athar_use_editor_home / athar_use_classic_header are enabled. Missing/null/false values no longer disable the design. This addresses a plausible activation failure; the live preview's setting values were not accessible, so its root cause is not confirmed.
-- The document body includes data-athar-build="0.4.1" to distinguish stale assets/templates from setting issues.
+- The document body includes data-athar-build="0.5.0" to distinguish stale assets/templates from setting issues.
 
 - Automatic homepage uses bundled original artwork. Existing merchant components remain available by enabling athar_use_editor_home.
 - Implemented adaptive header, cinematic hero, pausable scent marquee, native product lists with redesigned cards, scent bento, campaign, five-scene sticky journey, gifts, editorial cards, genuine store reviews and native footer integrations.

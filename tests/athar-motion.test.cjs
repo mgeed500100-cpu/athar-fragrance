@@ -23,6 +23,7 @@ function setup(count = 5, reduced = false) {
     }
     vm.runInNewContext(source, {
         HTMLElement: Element, customElements: {get: n => registry.get(n), define: (n,c) => registry.set(n,c)},
+        document: {body: {}}, getComputedStyle: () => ({getPropertyValue: () => ''}),
         window: {innerHeight: 900, matchMedia: q => q.includes('reduced') ? media : space,
             addEventListener: (n,f) => listeners.set(n,f), removeEventListener: n => listeners.delete(n)},
         requestAnimationFrame: fn => {frames.set(++id, fn); return id;}, cancelAnimationFrame: id => frames.delete(id)

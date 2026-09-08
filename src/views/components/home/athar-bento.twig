@@ -1,13 +1,25 @@
 <section class="athar-section athar-scents" id="{{ componentId|default('athar-scents') }}" data-athar-surface="light">
     <div class="athar-section__head athar-reveal"><div><p class="athar-eyebrow">{{ trans('athar.scents.eyebrow') }}</p><h2>{{ component.title|default(trans('athar.scents.title')) }}</h2></div><p>{{ trans('athar.scents.description') }}</p></div>
     <div class="athar-bento">
-        {% for scent in ['oud','floral','woody','fresh','night'] %}
-        {% set tones = {oud:3, floral:1, woody:2, fresh:0, night:4} %}
-        <a class="athar-bento__card athar-bento__card--{{ scent }} athar-reveal" href="{{ link('search') }}?q={{ trans('athar.scents.query_' ~ scent)|url_encode }}">
-            <span class="athar-bento__number">0{{ loop.index }}</span>
-            {% include 'components.athar.bottle' with {tone: tones[scent]} %}
-            <span class="athar-bento__label"><span><small>{{ trans('athar.scents.detail_' ~ scent) }}</small><strong>{{ trans('athar.scents.' ~ scent) }}</strong></span><span class="athar-round-arrow" aria-hidden="true">↗</span></span>
-        </a>
-        {% endfor %}
+        {% set slots = ['oud','floral','woody','fresh','night'] %}
+        {% if component.items|default([])|length %}
+            {% for item in component.items %}
+                {% set slot = slots[loop.index0] %}
+                <a class="athar-bento__card athar-bento__card--{{ slot }} athar-reveal" href="{{ link('search') }}?q={{ item.keyword|default(item.title)|url_encode }}">
+                    <span class="athar-bento__number">0{{ loop.index }}</span>
+                    {% if item.image %}<img class="athar-bento__media" src="{{ item.image }}" alt="{{ item.title|e('html_attr') }}" loading="lazy" decoding="async">{% else %}{% include 'components.athar.bottle' with {tone:loop.index0} %}{% endif %}
+                    <span class="athar-bento__label"><span><small>{{ item.detail }}</small><strong>{{ item.title }}</strong></span><span class="athar-round-arrow" aria-hidden="true">↗</span></span>
+                </a>
+            {% endfor %}
+        {% else %}
+            {% for scent in slots %}
+                {% set tones = {oud:3, floral:1, woody:2, fresh:0, night:4} %}
+                <a class="athar-bento__card athar-bento__card--{{ scent }} athar-reveal" href="{{ link('search') }}?q={{ trans('athar.scents.query_' ~ scent)|url_encode }}">
+                    <span class="athar-bento__number">0{{ loop.index }}</span>
+                    {% include 'components.athar.bottle' with {tone: tones[scent]} %}
+                    <span class="athar-bento__label"><span><small>{{ trans('athar.scents.detail_' ~ scent) }}</small><strong>{{ trans('athar.scents.' ~ scent) }}</strong></span><span class="athar-round-arrow" aria-hidden="true">↗</span></span>
+                </a>
+            {% endfor %}
+        {% endif %}
     </div>
 </section>

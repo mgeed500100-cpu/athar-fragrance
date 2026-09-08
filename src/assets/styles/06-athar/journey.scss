@@ -1,7 +1,7 @@
 /* Scoped styles: no overrides of Salla controls or global page colors. */
 athar-fragrance-journey {
-    --journey-bg: #f3efe5;
-    --journey-ink: #211c19;
+    --journey-bg: var(--athar-cream, #f3efe5);
+    --journey-ink: var(--athar-ink, #211c19);
     display: block;
     background: var(--journey-bg);
     color: var(--journey-ink);
