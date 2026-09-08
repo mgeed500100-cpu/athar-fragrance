@@ -1,0 +1,6 @@
+{% set keyword = theme.settings.get('athar_catalog_keyword', 'عطر') %}
+<section class="athar-section athar-product-story" data-athar-surface="light" component-id="{{ componentId|default('athar-product-story') }}">
+    <div class="athar-section__head"><div><p class="athar-eyebrow">{{ trans('athar.story.eyebrow') }}</p><h2>{{ component.title|default(trans('athar.story.title')) }}</h2></div></div>
+    {% if component.description %}<p class="athar-product-story__intro">{{ component.description }}</p>{% endif %}
+    <salla-products-list source="{{ component.product ? 'selected' : 'search' }}" source-value="{{ component.product ? (component.product|json_encode) : keyword }}" limit="1" sort-by="bestSell" row-cards includes='["images","rating"]'></salla-products-list>
+</section>

@@ -1,0 +1,10 @@
+{# Open the merchant's actual hosted subscription form. Never submit email to an invented API. #}
+{% set signup = theme.settings.get('athar_newsletter_url') %}
+{% if signup and signup starts with 'https://' %}
+<section class="athar-section athar-newsletter" data-athar-surface="dark">
+    <p class="athar-eyebrow">{{ trans('athar.newsletter.eyebrow') }}</p>
+    <h2>{{ trans('athar.newsletter.title') }}</h2>
+    <p>{{ trans('athar.newsletter.description') }}</p>
+    <a href="{{ signup|e('html_attr') }}" class="athar-button">{{ trans('athar.newsletter.cta') }} <span aria-hidden="true">↗</span></a>
+</section>
+{% endif %}

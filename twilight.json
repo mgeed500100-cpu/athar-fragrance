@@ -26,6 +26,15 @@
   ],
   "settings": [
     {
+      "id": "athar_newsletter_url",
+      "type": "string",
+      "format": "text",
+      "label": "رابط صفحة الاشتراك البريدي الآمنة (اختياري)",
+      "description": "رابط HTTPS لنموذج مزودك البريدي. يختفي القسم إن لم يوجد رابط؛ لا تضف مفاتيح API.",
+      "required": false,
+      "value": null
+    },
+    {
       "id": "athar_auto_home",
       "type": "boolean",
       "format": "switch",
@@ -363,6 +372,62 @@
     }
   ],
   "components": [
+    {
+      "key": "af5f533b-5ca8-4fa9-835c-e719d05842bb",
+      "title": {
+        "ar": "أثر | منتج تحت الضوء",
+        "en": "Athar | Product spotlight"
+      },
+      "icon": "sicon-star",
+      "path": "home.athar-product-story",
+      "fields": [
+        {
+          "id": "title",
+          "type": "string",
+          "format": "text",
+          "label": "العنوان",
+          "multilanguage": true,
+          "required": false,
+          "value": null
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "format": "textarea",
+          "label": "قصة المنتج (اختياري)",
+          "multilanguage": true,
+          "required": false,
+          "value": null
+        },
+        {
+          "type": "items",
+          "icon": "sicon-keyboard_arrow_down",
+          "label": "المنتج (اختياري)",
+          "id": "product",
+          "format": "dropdown-list",
+          "description": null,
+          "selected": [],
+          "options": [],
+          "required": false,
+          "multichoice": true,
+          "source": "products",
+          "searchable": true,
+          "maxLength": 1,
+          "minLength": 0,
+          "value": []
+        }
+      ]
+    },
+    {
+      "key": "54e47f43-d0b8-4ea2-8c28-ceca18d09822",
+      "title": {
+        "ar": "أثر | القائمة البريدية",
+        "en": "Athar | Mailing list"
+      },
+      "icon": "sicon-mail",
+      "path": "home.athar-newsletter",
+      "fields": []
+    },
     {
       "key": "e20dc971-91fd-497b-abe2-773d78221000",
       "title": {

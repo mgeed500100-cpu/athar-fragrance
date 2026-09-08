@@ -1,5 +1,142 @@
 {
-  "athar": {"brand":"Athar","access":{"skip":"Skip to content","menu":"Menu","search":"Search","wishlist":"Add or remove from wishlist"},"header":{"announcement":"Every presence leaves a trace. Every trace tells a story.","perfumes":"Fragrances","scents":"Scent families","journey":"The journey","gifts":"Gifting"},"hero":{"eyebrow":"The art of fragrance.","title":"A scent that speaks of you","description":"From the lightness of the first note to the depth of the last. Discover a fragrance that feels like you.","cta":"Explore the collection","secondary":"Begin the journey","image_alt":"Artistic perfume still life on natural stone","note_label":"Explore the notes","note_copy":"Warm woods and quiet amber","scroll":"Follow the scent"},"motion":{"pause":"Pause or resume moving strip"},"products":{"eyebrow":"A lasting impression","title":"Your next signature","all":"Explore fragrances","new_eyebrow":"Room for discovery","new_title":"You may also like","preview_note":"These are actual perfume products from the Salla catalog. Journey and campaign images are concept art, not products added to the store."},"scents":{"label":"Fragrance families","eyebrow":"Five worlds. Your own feeling.","title":"Find your scent","description":"Begin with a note you love. Let your senses take you further.","fresh":"Fresh beginnings","floral":"Floral heart","woody":"Amber warmth","oud":"The trace of oud","night":"After dark","query_fresh":"musk","query_floral":"rose","query_woody":"amber","query_oud":"oud","query_night":"perfume","detail_fresh":"Musk · Bergamot","detail_floral":"Rose · Blossom","detail_woody":"Amber · Woods","detail_oud":"Oud · Saffron","detail_night":"Musk · Spices"},"campaign":{"eyebrow":"What remains","title":"Presence is seen.\nA trace is felt.","description":"A small detail that carries an entire story. A journey that starts with a note and lingers in memory.","cta":"Discover the story"},"signature":{"eyebrow":"An olfactive journey","title":"From the first note to the last trace","description":"Five scent families, unfolding as you explore.","chapter":"Chapter","cta":"Explore these scents","story_fresh":"A light beginning, like the first morning sun. Bright citrus rests on the quiet softness of musk.","story_floral":"Petals slowly unfurl. A warm heart of rose with a soft finish that stays close to the skin.","story_woody":"Warmth fills the room quietly. Rich amber and balanced woods create an unhurried presence.","story_oud":"Eastern depth in a modern expression. Saffron opens into oud with a distinctive trail.","story_night":"When everything grows quiet, the fragrance speaks. Dark spices and warm musk for a more intimate moment.","fresh_top":"Bergamot · Citrus","fresh_heart":"Orange blossom · Tea","fresh_base":"Musk · Soft woods","floral_top":"Pink pepper · Pear","floral_heart":"Rose · Jasmine","floral_base":"Musk · Amber","woody_top":"Cardamom · Bergamot","woody_heart":"Amber · Cedar","woody_base":"Sandalwood · Vanilla","oud_top":"Saffron · Spices","oud_heart":"Rose · Incense","oud_base":"Oud · Musk","night_top":"Black pepper · Cardamom","night_heart":"Dark amber · Woods","night_base":"Musk · Patchouli"},"gifts":{"eyebrow":"For someone who stays in your heart","title":"Some gifts\nsay everything.","description":"Choose a gift that begins with a beautiful moment and lingers as an unforgettable scent.","cta":"Explore gifting","query":"gift","caption":"An artistic interpretation of gifting rituals","image_alt":"Artistic burgundy gift box and perfume still life"},"editorial":{"eyebrow":"Between fragrance and life","title":"The details tell the story","label":"The Athar journal","first":"Small rituals. Lasting presence.","second":"When a gift becomes a memory","third":"A fragrance for a quiet evening"},"reviews":{"eyebrow":"From our customers","title":"In their own words"},"connect":{"eyebrow":"Stay close","title":"The story continues","description":"Explore the world of fragrance and discover what is next."},"footer":{"eyebrow":"ATHAR — OLFACTIVE CHAPTERS","title":"The moment passes. The trace remains."},"journey":{"top":"Top notes","heart":"Heart notes","base":"Base notes","discover":"Discover fragrance"}},
+  "athar": {
+    "brand": "Athar",
+    "access": {
+      "skip": "Skip to content",
+      "menu": "Menu",
+      "search": "Search",
+      "wishlist": "Add or remove from wishlist"
+    },
+    "header": {
+      "announcement": "Every presence leaves a trace. Every trace tells a story.",
+      "perfumes": "Fragrances",
+      "scents": "Scent families",
+      "journey": "The journey",
+      "gifts": "Gifting"
+    },
+    "hero": {
+      "eyebrow": "The art of fragrance.",
+      "title": "A scent that speaks of you",
+      "description": "From the lightness of the first note to the depth of the last. Discover a fragrance that feels like you.",
+      "cta": "Explore the collection",
+      "secondary": "Begin the journey",
+      "image_alt": "Artistic perfume still life on natural stone",
+      "note_label": "Explore the notes",
+      "note_copy": "Warm woods and quiet amber",
+      "scroll": "Follow the scent"
+    },
+    "motion": {
+      "pause": "Pause or resume moving strip"
+    },
+    "products": {
+      "eyebrow": "A lasting impression",
+      "title": "Your next signature",
+      "all": "Explore fragrances",
+      "new_eyebrow": "NEW ARRIVALS",
+      "new_title": "A new presence",
+      "preview_note": "These are actual perfume products from the Salla catalog. Journey and campaign images are concept art, not products added to the store."
+    },
+    "scents": {
+      "label": "Fragrance families",
+      "eyebrow": "Five worlds. Your own feeling.",
+      "title": "Find your scent",
+      "description": "Begin with a note you love. Let your senses take you further.",
+      "fresh": "Fresh beginnings",
+      "floral": "Floral heart",
+      "woody": "Amber warmth",
+      "oud": "The trace of oud",
+      "night": "After dark",
+      "query_fresh": "musk",
+      "query_floral": "rose",
+      "query_woody": "amber",
+      "query_oud": "oud",
+      "query_night": "perfume",
+      "detail_fresh": "Musk · Bergamot",
+      "detail_floral": "Rose · Blossom",
+      "detail_woody": "Amber · Woods",
+      "detail_oud": "Oud · Saffron",
+      "detail_night": "Musk · Spices"
+    },
+    "campaign": {
+      "eyebrow": "What remains",
+      "title": "Presence is seen.\nA trace is felt.",
+      "description": "A small detail that carries an entire story. A journey that starts with a note and lingers in memory.",
+      "cta": "Discover the story"
+    },
+    "signature": {
+      "eyebrow": "An olfactive journey",
+      "title": "From the first note to the last trace",
+      "description": "Five scent families, unfolding as you explore.",
+      "chapter": "Chapter",
+      "cta": "Explore these scents",
+      "story_fresh": "A light beginning, like the first morning sun. Bright citrus rests on the quiet softness of musk.",
+      "story_floral": "Petals slowly unfurl. A warm heart of rose with a soft finish that stays close to the skin.",
+      "story_woody": "Warmth fills the room quietly. Rich amber and balanced woods create an unhurried presence.",
+      "story_oud": "Eastern depth in a modern expression. Saffron opens into oud with a distinctive trail.",
+      "story_night": "When everything grows quiet, the fragrance speaks. Dark spices and warm musk for a more intimate moment.",
+      "fresh_top": "Bergamot · Citrus",
+      "fresh_heart": "Orange blossom · Tea",
+      "fresh_base": "Musk · Soft woods",
+      "floral_top": "Pink pepper · Pear",
+      "floral_heart": "Rose · Jasmine",
+      "floral_base": "Musk · Amber",
+      "woody_top": "Cardamom · Bergamot",
+      "woody_heart": "Amber · Cedar",
+      "woody_base": "Sandalwood · Vanilla",
+      "oud_top": "Saffron · Spices",
+      "oud_heart": "Rose · Incense",
+      "oud_base": "Oud · Musk",
+      "night_top": "Black pepper · Cardamom",
+      "night_heart": "Dark amber · Woods",
+      "night_base": "Musk · Patchouli"
+    },
+    "gifts": {
+      "eyebrow": "For someone who stays in your heart",
+      "title": "Some gifts\nsay everything.",
+      "description": "Choose a gift that begins with a beautiful moment and lingers as an unforgettable scent.",
+      "cta": "Explore gifting",
+      "query": "gift",
+      "caption": "An artistic interpretation of gifting rituals",
+      "image_alt": "Artistic burgundy gift box and perfume still life"
+    },
+    "editorial": {
+      "eyebrow": "Between fragrance and life",
+      "title": "The details tell the story",
+      "label": "The Athar journal",
+      "first": "Small rituals. Lasting presence.",
+      "second": "When a gift becomes a memory",
+      "third": "A fragrance for a quiet evening"
+    },
+    "reviews": {
+      "eyebrow": "From our customers",
+      "title": "In their own words"
+    },
+    "connect": {
+      "eyebrow": "Stay close",
+      "title": "The story continues",
+      "description": "Explore the world of fragrance and discover what is next."
+    },
+    "footer": {
+      "eyebrow": "ATHAR — OLFACTIVE CHAPTERS",
+      "title": "The moment passes. The trace remains."
+    },
+    "journey": {
+      "top": "Top notes",
+      "heart": "Heart notes",
+      "base": "Base notes",
+      "discover": "Discover fragrance"
+    },
+    "story": {
+      "eyebrow": "FROM THE COLLECTION",
+      "title": "Meet your next fragrance"
+    },
+    "newsletter": {
+      "eyebrow": "LETTERS FROM ATHAR",
+      "title": "Stay close to what is next",
+      "description": "Discover releases and fragrance stories. Complete your subscription on our mailing list page.",
+      "cta": "Join the mailing list"
+    }
+  },
   "blocks": {
     "header": {
       "cart": "Cart"

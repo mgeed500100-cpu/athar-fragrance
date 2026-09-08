@@ -283,10 +283,31 @@ athar-fragrance-journey.athar-signature { padding: 80px max(24px, calc((100% - 1
     .athar-theme .athar-footer-intro { padding: 50px 24px; }
 }
 @media (prefers-reduced-motion:reduce) {
+    .athar-theme .athar-bento__card:hover > .athar-bottle { transform: translateX(-50%); }
+    .athar-theme .s-product-card-vertical:hover { transform: none; }
     .athar-theme *, .athar-theme *::before, .athar-theme *::after { scroll-behavior: auto !important; }
     .athar-marquee__track { animation: none; }
     .athar-marquee__group:nth-child(2) { display: none; }
     .athar-marquee__window { overflow-x: auto; }
     .athar-reveal.will-reveal { opacity: 1 !important; transform: none !important; }
     .athar-theme .athar-button, .athar-theme .athar-reveal, .athar-theme .athar-bottle, .athar-theme .athar-bottle img, .athar-theme .s-product-card-vertical, .athar-theme .athar-nav .inner { transition: none !important; }
+}
+
+/* A genuine catalog item with the same native option/cart behavior as other cards. */
+.athar-product-story .s-products-list-wrapper { grid-template-columns: minmax(0,1fr); }
+.athar-product-story .s-product-card-horizontal { background: #e8ded0; border: 0; border-radius: 0; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+.athar-product-story .s-product-card-image { width: 100%; height: auto; min-height: 460px; aspect-ratio: 1; background: #eee7da; }
+.athar-product-story .s-product-card-image img { width: 100%; height: 100%; object-fit: contain; padding: 40px; }
+.athar-product-story .s-product-card-content { padding: clamp(24px,4vw,64px); justify-content: center; }
+.athar-product-story .s-product-card-content-title a { font-size: clamp(28px,3vw,46px); line-height: 1.5; }
+.athar-product-story .s-product-card-content-subtitle { font-size: 18px; line-height: 1.9; white-space: normal; }
+.athar-product-story__intro { max-width: 640px; margin-bottom: 30px; line-height: 1.9; }
+.athar-newsletter { text-align: center; background: #171110; color: #fff8ed; }
+.athar-newsletter h2 { font-size: clamp(32px,4vw,56px); line-height: 1.5; }
+.athar-newsletter p { max-width: 580px; margin: 16px auto 28px; line-height: 1.9; }
+.athar-newsletter .athar-button { background: #f3efe5; color: #211c19; }
+@media(max-width:767px) {
+    .athar-product-story .s-product-card-horizontal { grid-template-columns: minmax(0,1fr); }
+    .athar-product-story .s-product-card-image { min-height: 0; aspect-ratio: 4/5; }
+    .athar-product-story .s-product-card-content { padding: 26px; }
 }

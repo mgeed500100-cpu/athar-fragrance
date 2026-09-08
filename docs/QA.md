@@ -9,6 +9,8 @@
 
 ## Journey live test
 
+The automatic homepage already includes five bundled scenes. Manual image setup below is only for validating the optional configurable journey.
+
 - Add the component from the theme editor and populate 2–5 owned bottle images.
 - Verify changes to images, titles, notes, CTA and scene count survive save/reload.
 - Scroll both directions: correct bottle/text/background; no sudden layout shifts.
@@ -20,6 +22,10 @@
 - CTA must point to its own product; absent URL must not produce a dead link.
 
 ## Commerce regression
+
+- Product spotlight: default catalog search, one selected SKU, absent description, empty results, real prices and options flow.
+- Latest arrivals: native latest source, including merchants with a mixed catalog.
+- Mailing list: absent/unsafe URL hides section; HTTPS provider URL opens the actual hosted signup page. Verify subscription completion with that provider before enabling.
 
 - Search, categories, filters, pagination, login, wishlist and cart.
 - Simple/options/variant products; discount, out-of-stock and loading/error states.
