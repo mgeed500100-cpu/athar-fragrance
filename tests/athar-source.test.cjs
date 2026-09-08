@@ -38,6 +38,12 @@ test('entry points include journey source and styles', () => {
     assert.match(read('src/assets/styles/app.scss'), /06-athar\/journey/);
     assert.match(read('src/views/pages/index.twig'), /component home/);
 });
+test('all Athar storefront product sections filter the fragrance catalog', () => {
+    const products = read('src/views/components/home/athar-products.twig');
+    assert.match(products, /source="search"/);
+    assert.doesNotMatch(products, /source="\{\{ latest \? 'latest'/);
+    assert.match(products, /athar_catalog_keyword/);
+});
 test('motion has lifecycle cleanup and reduced-motion handling', () => {
     const js = read('src/assets/js/athar/fragrance-journey.js');
     assert.match(js, /prefers-reduced-motion/);
