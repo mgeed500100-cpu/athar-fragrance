@@ -14,6 +14,11 @@ test('every declared home component has a Twig template', () => {
     for (const c of theme.components) assert.ok(fs.existsSync(path.join(root, 'src/views/components', c.path.replaceAll('.', '/') + '.twig')), c.path);
     assert.equal(new Set(theme.components.map(c => c.key)).size, theme.components.length);
 });
+test('theme editor exposes Athar components only', () => {
+    assert.ok(theme.components.length > 0);
+    assert.ok(theme.components.every(component => component.path.startsWith('home.athar-')));
+    assert.equal(theme.features.some(feature => feature.startsWith('component-')), false);
+});
 test('journey has bounded merchant-editable scenes and no price input', () => {
     const journey = theme.components.find(c => c.path === 'home.athar-journey');
     const scenes = journey.fields.find(f => f.id === 'scenes');

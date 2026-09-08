@@ -1,9 +1,12 @@
-# v0.3.2 verification and limitations
+# v0.4.0 verification and limitations
+
+- Removed six inherited Raed custom-component declarations and all inherited component feature flags from theme metadata. The editor now advertises Athar components only. Existing saved page items belong to the linked demo store and may require a clean demo store to disappear from its saved editor composition.
+- The theme never creates catalog records. Real product cards require products in the linked Salla demo store. The current `nasaq-one` catalog contains clothing and no matching fragrance products; GitHub theme code has no authority to delete those records or create perfume inventory.
 
 - Empty automatic product sections collapse after Salla confirms that no real catalog item matched. This removes large empty gaps in fresh demo stores while allowing populated sections to render normally.
 
 - Preview activation fix: Athar now renders unless the new explicit opt-out settings athar_use_editor_home / athar_use_classic_header are enabled. Missing/null/false values no longer disable the design. This addresses a plausible activation failure; the live preview's setting values were not accessible, so its root cause is not confirmed.
-- The document body includes data-athar-build="0.3.1" to distinguish stale assets/templates from setting issues.
+- The document body includes data-athar-build="0.4.0" to distinguish stale assets/templates from setting issues.
 
 - Automatic homepage uses bundled original artwork. Existing merchant components remain available by enabling athar_use_editor_home.
 - Implemented adaptive header, cinematic hero, pausable scent marquee, native product lists with redesigned cards, scent bento, campaign, five-scene sticky journey, gifts, editorial cards, genuine store reviews and native footer integrations.
