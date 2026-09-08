@@ -10,6 +10,19 @@ test('independent project metadata', () => {
     assert.equal(theme.repository, 'https://github.com/mgeed500100-cpu/athar-fragrance');
     assert.equal(JSON.parse(read('package.json')).name, 'athar-fragrance');
 });
+test('Salla review requirements stay current', () => {
+    const pkg = JSON.parse(read('package.json'));
+    for (const dependency of ['@salla.sa/twilight', '@salla.sa/twilight-components']) {
+        const version = pkg.devDependencies[dependency].replace(/^[^0-9]*/, '').split('.').map(Number);
+        assert.equal(version[0], 2, `${dependency} major version`);
+        assert.equal(version[1], 14, `${dependency} minor version`);
+        assert.ok(version[2] >= 575, `${dependency} patch version`);
+    }
+    const order = read('src/views/pages/customer/orders/single.twig');
+    assert.match(order, /<salla-review-factors-tags/);
+    assert.match(order, /order-id="\{\{ order\.id \}\}"/);
+    assert.match(order, /rating-id="\{\{ item\.rating\.id \}\}"/);
+});
 test('every declared home component has a Twig template', () => {
     for (const c of theme.components) assert.ok(fs.existsSync(path.join(root, 'src/views/components', c.path.replaceAll('.', '/') + '.twig')), c.path);
     assert.equal(new Set(theme.components.map(c => c.key)).size, theme.components.length);

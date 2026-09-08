@@ -340,7 +340,18 @@
                                 </div>
                             {% endif %}
 
-                            <salla-review-order-item product-id="{{ item.product.id }}"></salla-review-order-item>
+                            {% if item.rating and item.product %}
+                                <salla-review-factors-tags
+                                    order-id="{{ order.id }}"
+                                    rating-id="{{ item.rating.id }}"
+                                    item-id="{{ item.id }}"
+                                    product-id="{{ item.product.id }}">
+                                </salla-review-factors-tags>
+                            {% endif %}
+
+                            {% if item.product %}
+                                <salla-review-order-item product-id="{{ item.product.id }}"></salla-review-order-item>
+                            {% endif %}
                         </div>
                     {% endfor %}
                 </div>
