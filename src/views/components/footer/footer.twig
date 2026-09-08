@@ -1,4 +1,5 @@
 <footer data-testid="store-footer" class="store-footer">
+    <div class="athar-footer-intro"><span class="athar-eyebrow">{{ trans('athar.footer.eyebrow') }}</span><p>{{ trans('athar.footer.title') }}</p><a href="{{ link('/') }}#athar-products" class="athar-text-link">{{ trans('athar.hero.cta') }} <span aria-hidden="true">↗</span></a></div>
 	<div aria-label="footer" class="store-footer__inner">
 		<div class="container grid grid-col-1 lg:grid-cols-6 gap-8 lg:gap-6">
 			<div class="lg:col-span-2 rtl:lg:pl-20 ltr:lg:pr-20">
@@ -67,6 +68,4 @@
 		<span class="text-sm copyright-text">{% hook copyright %}</span>
 		<salla-payments data-testid="store-footer-payments"></salla-payments>
 	</div>
-</div>
-
 <span class="hidden bottom-2 rtl:pl-24 ltr:pr-24 md:grid-cols-3 opacity-40"></span></footer>

@@ -1,6 +1,6 @@
 # أثر | Athar Fragrance
 
-Status: foundation and initial Fragrance Journey implementation; not marketplace-ready.
+Status: v0.2 automatic visual storefront implemented; live validation and marketplace release gates remain open. See STATUS.md for exact coverage. The roadmap below describes the complete target, not completed acceptance.
 
 ## Approved direction
 
@@ -18,7 +18,7 @@ fresh/floral/woody/oud/night scenes. Each scene has its own image, title, story,
 top/heart/base notes and optional product link. Bottle and background crossfade.
 No page-wide scroll capture. No 15 compulsory screens for five sets of three notes.
 Single-scene, missing-image, no-JS, reduced-motion and short-screen layouts must work.
-Use merchant-owned transparent images; no external brand photography bundled.
+Use bundled original generated artwork by default, with optional merchant-owned images. No external brand photography is bundled.
 
 ## Homepage roadmap
 
@@ -39,7 +39,7 @@ Use merchant-owned transparent images; no external brand photography bundled.
 
 ## Commercial requirements
 
-All components remain reorderable/removable from the editor. Homepage color changes
+Disable athar_auto_home to use reorderable/removable editor components; the approved automatic layout requires no manual banner setup. Homepage color changes
 must not depend on fixed section indices. Future adaptive header should use explicit
 section contrast tokens, including when components are repeated or reordered.
 Product/collection/search/cart/account pages must receive the same visual system.

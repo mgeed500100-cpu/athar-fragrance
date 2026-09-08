@@ -1,0 +1,4 @@
+<section class="athar-gifts" data-athar-surface="dark" id="{{ componentId|default('athar-gifts') }}">
+    <div class="athar-gifts__copy athar-reveal"><p class="athar-eyebrow">{{ trans('athar.gifts.eyebrow') }}</p><h2>{{ component.title|default(trans('athar.gifts.title')) }}</h2><p>{{ component.description|default(trans('athar.gifts.description')) }}</p><a class="athar-button athar-button--light" href="{{ component.url|default(link('search') ~ '?q=' ~ (trans('athar.gifts.query')|url_encode)) }}">{{ trans('athar.gifts.cta') }} <span aria-hidden="true">↗</span></a><span class="athar-gifts__caption">{{ trans('athar.gifts.caption') }}</span></div>
+    <div class="athar-gifts__image"><img src="{{ component.image|default('images/athar/gift.webp'|asset) }}" alt="{{ trans('athar.gifts.image_alt') }}" width="1200" height="800" loading="lazy"></div>
+</section>

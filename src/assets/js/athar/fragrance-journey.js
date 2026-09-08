@@ -28,6 +28,10 @@ class AtharFragranceJourney extends HTMLElement {
             const palette = colors[next % colors.length];
             this.style.setProperty('--journey-bg', palette[0]);
             this.style.setProperty('--journey-ink', palette[1]);
+            if (this.dataset) this.dataset.atharSurface = next >= 3 ? 'dark' : 'light';
+            const counter = this.querySelector?.('[data-journey-count]');
+            if (counter) counter.textContent = String(next + 1).padStart(2, '0');
+            this.dispatchEvent?.(new CustomEvent('athar:scene', {bubbles:true}));
         };
         const schedule = () => {
             if (!frame && visible && this.classList.contains('is-enhanced')) frame = requestAnimationFrame(update);
@@ -38,6 +42,7 @@ class AtharFragranceJourney extends HTMLElement {
             if (motion.matches || !space.matches) {
                 this.style.removeProperty('--journey-bg');
                 this.style.removeProperty('--journey-ink');
+                if (this.dataset) this.dataset.atharSurface = 'light';
             }
             schedule();
         };

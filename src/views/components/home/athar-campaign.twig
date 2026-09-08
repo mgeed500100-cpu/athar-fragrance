@@ -1,0 +1,4 @@
+<section class="athar-campaign" data-athar-surface="dark" component-id="{{ componentId|default('athar-campaign') }}">
+    <div class="athar-campaign__image"><img src="{{ component.image|default('images/athar/hero.webp'|asset) }}" alt="{{ trans('athar.hero.image_alt') }}" width="1440" height="960" loading="lazy"></div>
+    <div class="athar-campaign__copy athar-reveal"><p class="athar-eyebrow">{{ trans('athar.campaign.eyebrow') }}</p><h2>{{ component.title|default(trans('athar.campaign.title')) }}</h2><p>{{ component.description|default(trans('athar.campaign.description')) }}</p><a class="athar-button athar-button--light" href="{{ component.url|default(link('/') ~ '#athar-journey') }}">{{ trans('athar.campaign.cta') }} <span aria-hidden="true">↗</span></a></div>
+</section>

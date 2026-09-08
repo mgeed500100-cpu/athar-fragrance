@@ -1,0 +1,13 @@
+{# Zero-setup composition; each included section is separately registered in twilight.json. #}
+<div class="athar-storefront">
+    {% include 'components.home.athar-hero' with {component:{},componentId:'athar-auto-hero'} %}
+    {% include 'components.home.athar-benefits' %}
+    {% include 'components.home.athar-products' with {component:{},componentId:'athar-products'} %}
+    {% include 'components.home.athar-bento' with {component:{},componentId:'athar-scents'} %}
+    {% include 'components.home.athar-campaign' with {component:{},componentId:'athar-campaign'} %}
+    {% include 'components.home.athar-signature' with {component:{},componentId:'athar-journey'} %}
+    {% include 'components.home.athar-products' with {component:{latest:true},componentId:'athar-new'} %}
+    {% include 'components.home.athar-gifts' with {component:{},componentId:'athar-gifts'} %}
+    {% include 'components.home.athar-editorial' with {component:{},componentId:'athar-editorial'} %}
+    {% include 'components.home.athar-social' with {component:{}} %}
+</div>

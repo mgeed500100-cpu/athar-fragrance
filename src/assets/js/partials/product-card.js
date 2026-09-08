@@ -226,11 +226,11 @@ class ProductCard extends HTMLElement {
 
           <div class="s-product-card-content-main ${this.isSpecial ? 's-product-card-content-extra-padding' : ''}">
             <h3 class="s-product-card-content-title">
-              <a href="${this.product?.url}">${this.product?.name}</a>
+              <a href="${this.product?.url}">${this.escapeHTML(this.product?.name)}</a>
             </h3>
 
             ${this.product?.subtitle && !this.minimal ?
-              `<p class="s-product-card-content-subtitle opacity-80">${this.product?.subtitle}</p>`
+              `<p class="s-product-card-content-subtitle opacity-80">${this.escapeHTML(this.product?.subtitle)}</p>`
               : ``}
           </div>
           ${this.product?.donation && !this.minimal && !this.fullImage ?
@@ -296,6 +296,23 @@ class ProductCard extends HTMLElement {
             : ``}
         </div>
       `
+
+      // Use the second real product photo supplied in the same list response.
+      // Never substitute concept art for a SKU or issue a request per card.
+      const secondPhoto = this.product?.images?.[1]?.url;
+      const imageLink = this.querySelector('.s-product-card-image > a');
+      if (secondPhoto && imageLink && !this.horizontal && !this.fullImage && !this.minimal) {
+        const image = document.createElement('img');
+        image.className = 'athar-product-secondary';
+        image.src = secondPhoto;
+        image.alt = '';
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        imageLink.append(image);
+      }
+      this.querySelectorAll('.s-product-card-wishlist-btn').forEach(button => {
+        button.setAttribute('aria-label', salla.lang.get('athar.access.wishlist'));
+      });
 
       this.querySelectorAll('[name="donating_amount"]').forEach((element)=>{
         element.addEventListener('input', (e) => {

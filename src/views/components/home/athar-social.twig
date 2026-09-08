@@ -1,0 +1,7 @@
+<section class="athar-section athar-reviews" data-athar-surface="light">
+    <div class="athar-section__head"><div><p class="athar-eyebrow">{{ trans('athar.reviews.eyebrow') }}</p><h2>{{ component.title|default(trans('athar.reviews.title')) }}</h2></div></div>
+    <salla-reviews source="store" limit="4" display-all-link></salla-reviews>
+</section>
+{% if store.social|length %}
+<section class="athar-connect" data-athar-surface="light"><p class="athar-eyebrow">{{ trans('athar.connect.eyebrow') }}</p><h2>{{ trans('athar.connect.title') }}</h2><p>{{ trans('athar.connect.description') }}</p><salla-social></salla-social></section>
+{% endif %}

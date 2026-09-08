@@ -7,7 +7,11 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    {% component home %}
+    {% if theme.settings.get('athar_auto_home', true) %}
+        {% include 'components.athar.storefront' %}
+    {% else %}
+        {% component home %}
+    {% endif %}
 {% endblock %}
 {% block scripts %}
     <script defer src="{{ 'home.js' | asset }}"></script>

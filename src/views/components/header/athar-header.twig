@@ -1,0 +1,28 @@
+<header class="store-header athar-header" data-testid="store-header">
+    <div class="athar-toprail"><span>{{ theme.settings.get('athar_announcement')|default(trans('athar.header.announcement')) }}</span>
+        {% if store.settings.is_multilingual or store.settings.currencies_enabled %}<salla-localization-modal show-trigger></salla-localization-modal>{% endif %}
+        {% if store.scope %}<button type="button" onclick="salla.event.dispatch('scopes::open', {mode:'default'})">{{ store.scope.name }}</button>{% endif %}
+    </div>
+    <div id="mainnav" class="main-nav-container athar-nav"><div class="inner">
+        <div class="athar-nav__brand">
+            <a class="athar-icon athar-mobile-menu" href="#mobile-menu" aria-label="{{ trans('athar.access.menu') }}"><i class="sicon-menu" aria-hidden="true"></i></a>
+            <a class="navbar-brand athar-wordmark" href="{{ store.url }}" aria-label="{{ store.name|e('html_attr') }}">
+                {% if theme.settings.get('athar_use_store_logo', false) and store.logo %}<img src="{{ store.logo|cdn(175) }}" alt="{{ store.name }}" width="150" height="56">
+                {% else %}<span>{{ theme.settings.get('athar_brand_name')|default(trans('athar.brand')) }}</span><small>PARFUMS</small>{% endif %}
+            </a>
+        </div>
+        <nav class="athar-nav__links" aria-label="{{ trans('athar.access.menu') }}">
+            <a href="{{ link('/') }}#athar-products">{{ trans('athar.header.perfumes') }}</a>
+            <a href="{{ link('/') }}#athar-scents">{{ trans('athar.header.scents') }}</a>
+            <a href="{{ link('/') }}#athar-journey">{{ trans('athar.header.journey') }}</a>
+            <a href="{{ link('/') }}#athar-gifts">{{ trans('athar.header.gifts') }}</a>
+        </nav>
+        <div class="athar-nav__actions">
+            <a href="{{ link('search') }}" class="athar-icon" data-athar-search aria-label="{{ trans('athar.access.search') }}"><i class="sicon-search" aria-hidden="true"></i></a>
+            <salla-user-menu data-testid="store-header-user-menu" avatar-only show-header show-trigger></salla-user-menu>
+            <salla-cart-summary data-testid="store-header-cart"><i slot="icon" class="sicon-shopping-bag" aria-hidden="true"></i></salla-cart-summary>
+        </div>
+    </div></div>
+    <div class="athar-native-menu"><custom-main-menu></custom-main-menu></div>
+    <salla-bullet-delivery-tag></salla-bullet-delivery-tag>
+</header>

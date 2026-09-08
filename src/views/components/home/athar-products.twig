@@ -1,0 +1,9 @@
+{% set latest = component.latest|default(false) %}
+<section class="athar-section athar-products {{ latest ? 'athar-products--new' : '' }}" id="{{ componentId|default(latest ? 'athar-new' : 'athar-products') }}" data-athar-surface="light">
+    <div class="athar-section__head athar-reveal">
+        <div><p class="athar-eyebrow">{{ trans(latest ? 'athar.products.new_eyebrow' : 'athar.products.eyebrow') }}</p><h2>{{ component.title|default(trans(latest ? 'athar.products.new_title' : 'athar.products.title')) }}</h2></div>
+        <a class="athar-text-link" href="{{ link('search') }}?q={{ theme.settings.get('athar_catalog_keyword', 'عطر')|url_encode }}">{{ trans('athar.products.all') }} <span aria-hidden="true">↗</span></a>
+    </div>
+    <salla-products-list source="search" source-value="{{ component.keyword|default(theme.settings.get('athar_catalog_keyword', 'عطر')) }}" limit="{{ component.limit|default(4) }}" sort-by="{{ latest ? 'ourSuggest' : 'bestSell' }}" includes='["images"]'></salla-products-list>
+    {% if theme.mode != 'live' %}<p class="athar-catalog-notice">{{ trans('athar.products.preview_note') }}</p>{% endif %}
+</section>

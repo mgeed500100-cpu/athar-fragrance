@@ -1,0 +1,8 @@
+<section class="athar-section athar-editorial" data-athar-surface="light" component-id="{{ componentId|default('athar-editorial') }}">
+    <div class="athar-section__head athar-reveal"><div><p class="athar-eyebrow">{{ trans('athar.editorial.eyebrow') }}</p><h2>{{ component.title|default(trans('athar.editorial.title')) }}</h2></div></div>
+    <div class="athar-editorial__grid">
+        <a class="athar-editorial__card" href="{{ link('/') }}#athar-journey"><img src="{{ 'images/athar/hero.webp'|asset }}" alt="{{ trans('athar.hero.image_alt') }}" width="1440" height="960" loading="lazy"><span><small>01 / {{ trans('athar.editorial.label') }}</small><strong>{{ trans('athar.editorial.first') }}</strong></span></a>
+        <a class="athar-editorial__card" href="{{ link('/') }}#athar-gifts"><img src="{{ 'images/athar/gift.webp'|asset }}" alt="{{ trans('athar.gifts.image_alt') }}" width="1200" height="800" loading="lazy"><span><small>02 / {{ trans('athar.editorial.label') }}</small><strong>{{ trans('athar.editorial.second') }}</strong></span></a>
+        <a class="athar-editorial__card athar-editorial__card--bottle" href="{{ link('search') }}?q={{ trans('athar.scents.query_night')|url_encode }}">{% include 'components.athar.bottle' with {tone:4} %}<span><small>03 / {{ trans('athar.editorial.label') }}</small><strong>{{ trans('athar.editorial.third') }}</strong></span></a>
+    </div>
+</section>

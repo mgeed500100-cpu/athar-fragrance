@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import Anime from './partials/anime';
 import initTootTip from './partials/tooltip';
 import AppHelpers from "./app-helpers";
+import './athar/storefront';
 
 class App extends AppHelpers {
   constructor() {
@@ -14,7 +15,7 @@ class App extends AppHelpers {
     this.commonThings();
     this.initiateNotifier();
     this.initiateMobileMenu();
-    if (header_is_sticky) {
+    if (header_is_sticky && !document.querySelector('.athar-header')) {
       this.initiateStickyMenu();
     }
     this.initAddToCart();

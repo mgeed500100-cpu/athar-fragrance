@@ -5,7 +5,7 @@
 - Preserve Salla hooks, localization, product options, cart, wishlist and checkout behavior.
 - Use Twig, SCSS and lightweight JavaScript. No React runtime, scroll hijacking or WebGL by default.
 - Signature requirement: within Fragrance Journey, scrolling changes the bottle, background, name and scent notes smoothly. Do not replace this with a static banner.
-- Homepage sections must be merchant-editable components, not a hardcoded homepage.
+- Homepage sections must be merchant-editable components. The approved automatic composition is enabled by default; switching it off restores the merchant's editor composition.
 - Keep Arabic RTL and English LTR usable. Do not invent ratings, prices, stock or trust claims.
 - Make essential shopping actions visible on touch devices and respect reduced motion.
 - Keep reference links and license decisions in `docs/REFERENCES.md`. Do not copy reference artwork/code without permission.

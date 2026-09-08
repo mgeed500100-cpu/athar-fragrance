@@ -1,0 +1,22 @@
+{% set hero_image = component.image|default(theme.settings.get('athar_hero_image')) %}
+<section class="athar-hero" data-athar-surface="light" component-id="{{ componentId|default('athar-auto-hero') }}">
+    <div class="athar-hero__visual">
+        <img src="{{ hero_image ?: ('images/athar/hero.webp'|asset) }}" alt="{{ trans('athar.hero.image_alt') }}" width="1440" height="960" fetchpriority="high" loading="eager">
+        <span class="athar-hero__edition" aria-hidden="true">OLFACTIVE CHAPTERS — 01</span>
+    </div>
+    <div class="athar-hero__copy">
+        <p class="athar-eyebrow">{{ trans('athar.hero.eyebrow') }}</p>
+        <h1>{{ component.title|default(theme.settings.get('athar_hero_title'))|default(trans('athar.hero.title')) }}</h1>
+        <p class="athar-hero__description">{{ component.description|default(trans('athar.hero.description')) }}</p>
+        <div class="athar-actions">
+            <a class="athar-button" href="{{ component.url|default(link('/') ~ '#athar-products') }}">{{ trans('athar.hero.cta') }}<span aria-hidden="true">↗</span></a>
+            <a class="athar-text-link" href="{{ link('/') }}#athar-journey">{{ trans('athar.hero.secondary') }}</a>
+        </div>
+        <a class="athar-hero__note" href="{{ link('/') }}#athar-journey">
+            {% include 'components.athar.bottle' with {tone: 2} %}
+            <span><small>{{ trans('athar.hero.note_label') }}</small><strong>{{ trans('athar.scents.woody') }}</strong><span>{{ trans('athar.hero.note_copy') }}</span></span>
+            <span class="athar-hero__note-arrow" aria-hidden="true">↗</span>
+        </a>
+    </div>
+    <a class="athar-hero__scroll" href="{{ link('/') }}#athar-scents"><span aria-hidden="true">↓</span>{{ trans('athar.hero.scroll') }}</a>
+</section>

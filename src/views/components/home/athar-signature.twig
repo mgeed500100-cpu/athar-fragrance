@@ -1,0 +1,22 @@
+{# Default educational scent journey. Atlas images are concept art, not SKU photos. #}
+<athar-fragrance-journey class="athar-signature" id="{{ componentId|default('athar-journey') }}" data-athar-surface="light">
+    <div class="athar-section__head athar-reveal"><div><p class="athar-eyebrow">{{ trans('athar.signature.eyebrow') }}</p><h2>{{ component.title|default(trans('athar.signature.title')) }}</h2></div><p>{{ trans('athar.signature.description') }}</p></div>
+    <div class="athar-signature__layout">
+        <div class="athar-signature__stage" aria-hidden="true">
+            <span class="athar-signature__halo"></span><span class="athar-signature__word">ATHAR</span>
+            {% for tone in 0..4 %}<div class="athar-signature__bottle" data-journey-bottle>{% include 'components.athar.bottle' with {tone:tone} %}</div>{% endfor %}
+            <div class="athar-signature__counter"><span data-journey-count>01</span> / 05</div>
+        </div>
+        <div class="athar-signature__steps">
+            {% for scent in ['fresh','floral','woody','oud','night'] %}
+            <article class="athar-signature__step" data-journey-step>
+                <div class="athar-signature__fallback">{% include 'components.athar.bottle' with {tone:loop.index0} %}</div>
+                <p class="athar-eyebrow">{{ trans('athar.signature.chapter') }} 0{{ loop.index }}</p>
+                <h3>{{ trans('athar.scents.' ~ scent) }}</h3><p class="athar-signature__story">{{ trans('athar.signature.story_' ~ scent) }}</p>
+                <dl>{% for note in ['top','heart','base'] %}<div><dt><span aria-hidden="true">0{{ loop.index }}</span>{{ trans('athar.journey.' ~ note) }}</dt><dd>{{ trans('athar.signature.' ~ scent ~ '_' ~ note) }}</dd></div>{% endfor %}</dl>
+                <a class="athar-text-link" href="{{ link('search') }}?q={{ trans('athar.scents.query_' ~ scent)|url_encode }}">{{ trans('athar.signature.cta') }} <span aria-hidden="true">↗</span></a>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</athar-fragrance-journey>
