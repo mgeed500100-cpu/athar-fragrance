@@ -287,6 +287,10 @@ body.athar-theme.footer-is-light .store-footer__inner {
 .athar-theme .product-form .s-button-primary { background: var(--athar-ink); color: #fff8ed; }
 
 /* Shared inner pages: catalog, search, cart, account and content pages. */
+body.athar-theme,
+.athar-theme .app-inner,
+.athar-theme #main-content,
+.athar-theme .container--products-list { background: var(--athar-cream) !important; }
 .athar-theme .container--products-list { max-width: 1240px; padding-block: 30px 80px; }
 .athar-theme .container--products-list #page-main-title { font-size: clamp(28px, 4vw, 48px); font-weight: 500; }
 .athar-theme .container--products-list .form-input,
@@ -304,6 +308,24 @@ body.athar-theme.footer-is-light .store-footer__inner {
 .athar-theme .no-content-placeholder,
 .athar-theme .content-entry,
 .athar-theme .account-inner { background: #eee7dc; color: var(--athar-ink); }
+
+/* The Salla editor can open the off-canvas menu inside a desktop-width iframe. */
+.athar-theme .mm-ocd__content {
+    width: min(88vw, 430px);
+    background: var(--athar-night) !important;
+    color: var(--athar-cream);
+    box-shadow: 0 0 70px rgb(0 0 0 / 35%);
+}
+.athar-theme .mm-ocd__backdrop { background: rgb(24 12 14 / 62%); backdrop-filter: blur(3px); }
+.athar-theme .mm-spn.mm-spn--light,
+.athar-theme .mm-spn {
+    color: var(--athar-cream) !important;
+    background: radial-gradient(circle at 85% 12%, rgb(90 24 37 / 55%), transparent 34%), linear-gradient(165deg, #211f1e 0%, #171110 70%) !important;
+}
+.athar-theme .mm-spn.mm-spn--navbar::after { color: #fff8ed; opacity: 1; border-bottom: 1px solid rgb(243 239 229 / 18%); }
+.athar-theme .mm-spn li > a,
+.athar-theme .mm-spn li > span { color: #f2e8dd; }
+.athar-theme .btn--close-sm.close-mobile-menu { color: #fff8ed; background: rgb(255 255 255 / 8%); }
 
 @media (max-width:1023px) {
     .athar-nav__links { gap: 16px; }

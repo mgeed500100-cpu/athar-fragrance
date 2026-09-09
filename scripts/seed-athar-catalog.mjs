@@ -74,6 +74,19 @@ const catalog = [
 const categoryNames = ['العطور', ...new Set(catalog.map(item => item.category)), 'الهدايا'];
 const existingCategories = await request('/categories?per_page=100');
 const categoryIds = new Map(existingCategories.map(category => [category.name.trim(), category.id]));
+const legacyFashionCategories = new Set([
+  'فساتين', 'الفساتين', 'بلايز', 'البلايز',
+  'تنانير', 'التنانير', 'جاكيتات', 'الجاكيتات',
+]);
+
+for (const category of existingCategories) {
+  if (!legacyFashionCategories.has(category.name.trim()) || category.status === 'hidden') continue;
+  await request(`/categories/${category.id}`, {
+    method: 'PUT',
+    body: JSON.stringify({name: category.name, status: 'hidden'}),
+  });
+  console.log(`Hidden legacy category: ${category.name}`);
+}
 
 for (const name of categoryNames) {
   if (categoryIds.has(name)) {

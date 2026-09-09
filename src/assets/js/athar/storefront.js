@@ -44,7 +44,11 @@ const initializeAthar = () => {
         'تنانير', 'التنانير', 'جاكيتات', 'الجاكيتات'
     ]);
     const cleanLegacyNavigation = root => {
-        root.querySelectorAll?.('a').forEach(link => {
+        const links = [
+            ...(root.matches?.('a') ? [root] : []),
+            ...(root.querySelectorAll?.('a') || [])
+        ];
+        links.forEach(link => {
             const label = link.textContent.replace(/\s+/g, ' ').trim();
             if (!legacyFashionLabels.has(label)) return;
             const item = link.closest('li');
@@ -58,6 +62,8 @@ const initializeAthar = () => {
         }));
     });
     navigationObserver.observe(document.body, {childList:true, subtree:true});
+    // Salla's editor can hydrate and clone the off-canvas menu after the first DOM pass.
+    [100, 500, 1500, 3000].forEach(delay => setTimeout(() => cleanLegacyNavigation(document), delay));
 
     // Keep automatic storefronts compact when the connected demo catalog has no matching items.
     document.querySelectorAll('.athar-products salla-products-list, .athar-product-story salla-products-list').forEach(list => {
