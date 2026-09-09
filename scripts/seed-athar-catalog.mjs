@@ -126,7 +126,7 @@ for (const item of catalog) {
       subtitle: item.subtitle,
       metadata_title: `${item.name} | أثر للعطور`,
       metadata_description: item.subtitle,
-      images: [{original: item.image, thumbnail: item.image, alt: item.name, default: true, sort: 1}],
+      images: [{original: item.image, thumbnail: item.image, alt: 'product image', default: true, sort: 1}],
     }),
   });
   console.log(`Created product: ${item.name}`);
