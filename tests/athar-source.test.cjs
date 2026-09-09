@@ -97,3 +97,12 @@ test('catalog and native inner pages carry the Athar editorial treatment', () =>
     assert.match(script, /legacyFashionLabels/);
     assert.match(script, /cleanLegacyNavigation/);
 });
+test('catalog seeder is idempotent and keeps credentials outside source', () => {
+    const seeder = read('scripts/seed-athar-catalog.mjs');
+    assert.match(seeder, /process\.env\.SALLA_ACCESS_TOKEN/);
+    assert.match(seeder, /\/categories\?per_page=100/);
+    assert.match(seeder, /\/products\?per_page=100&format=light/);
+    assert.match(seeder, /productsByName\.get/);
+    assert.doesNotMatch(seeder, /Bearer\s+[A-Za-z0-9_-]{20,}/);
+    assert.equal(JSON.parse(read('package.json')).scripts['catalog:seed'], 'node scripts/seed-athar-catalog.mjs');
+});

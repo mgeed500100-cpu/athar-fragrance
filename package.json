@@ -13,7 +13,8 @@
     "production": "webpack --mode production",
     "prod": "webpack --mode production",
     "development": "webpack --mode development",
-    "watch": "webpack --mode development --watch"
+    "watch": "webpack --mode development --watch",
+    "catalog:seed": "node scripts/seed-athar-catalog.mjs"
   },
   "author": "mgeed500100-cpu (based on Salla Theme Raed)",
   "dependencies": {
