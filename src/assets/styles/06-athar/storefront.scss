@@ -221,6 +221,90 @@ body.athar-theme.footer-is-light .store-footer__inner {
 .athar-theme .container--products-list { padding-block-end: 60px; }
 .athar-theme .product-single { background: var(--athar-cream); }
 
+/* Catalog proportions: one fragrance should still own the available canvas. */
+.athar-theme [data-athar-legacy-category='hidden'] { display: none !important; }
+.athar-products .s-products-list-wrapper:has(> :only-child) {
+    grid-template-columns: minmax(280px, 520px);
+    justify-content: center;
+}
+.athar-products .s-product-card-vertical .s-product-card-image img {
+    object-fit: cover;
+    padding: 0;
+}
+
+/* Product details — a complete editorial surface, not the base Raed screen. */
+.athar-theme .container--breadcrumbs { padding-block: 8px; }
+.athar-theme .breadcrumbs { color: #75695f; font-size: 13px; }
+.athar-theme .container--product-details {
+    max-width: 1240px;
+    margin-block: 12px 80px;
+    padding: clamp(18px, 3vw, 42px);
+    background: #eee7dc;
+    border: 1px solid rgb(33 28 25 / 10%);
+}
+.athar-theme .container--product-details > div { gap: clamp(24px, 5vw, 76px); }
+.athar-theme .container--product-details .sidebar { margin-inline: 0 !important; }
+.athar-theme .details-slider {
+    border-radius: 0 !important;
+    background: #e3d8ca;
+    overflow: hidden;
+}
+.athar-theme .details-slider .swiper-slide { background: #e3d8ca; aspect-ratio: 1 / 1; }
+.athar-theme .details-slider .swiper-slide > img,
+.athar-theme .details-slider .homeslider__slide > img { object-fit: cover !important; }
+.athar-theme .details-slider .btn--wishlist { top: 18px; inset-inline-end: 18px; }
+.athar-theme .container--product-details .main-content {
+    align-self: stretch;
+    padding-block: clamp(10px, 2.5vw, 38px);
+}
+.athar-theme .container--product-details .main-content::before {
+    content: 'ATHAR — OLFACTIVE EDITION';
+    display: block;
+    margin-bottom: 18px;
+    color: #735d50;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: .14em;
+}
+.athar-theme .container--product-details [data-testid='store-product-title'] {
+    margin-bottom: 18px;
+    color: var(--athar-ink);
+    font-size: clamp(30px, 3vw, 48px);
+    font-weight: 500;
+    line-height: 1.4;
+}
+.athar-theme .container--product-details [data-testid='store-product-price'] {
+    padding-block: 16px;
+    border-block: 1px solid rgb(33 28 25 / 18%);
+}
+.athar-theme .container--product-details [data-testid='store-product-price'] p { font-size: 24px; color: var(--athar-wine); }
+.athar-theme .product__description { padding: 22px 0 !important; color: #574b44; line-height: 2; }
+.athar-theme .product-form > section,
+.athar-theme .container--product-details .bg-white { background: rgb(255 251 244 / 72%) !important; border-radius: 0 !important; }
+.athar-theme .product-form .s-button-element,
+.athar-theme .product-form salla-add-product-button { border-radius: 2px; }
+.athar-theme .product-form .s-button-element { min-height: 56px; font-size: 16px; }
+.athar-theme .product-form .s-button-primary { background: var(--athar-ink); color: #fff8ed; }
+
+/* Shared inner pages: catalog, search, cart, account and content pages. */
+.athar-theme .container--products-list { max-width: 1240px; padding-block: 30px 80px; }
+.athar-theme .container--products-list #page-main-title { font-size: clamp(28px, 4vw, 48px); font-weight: 500; }
+.athar-theme .container--products-list .form-input,
+.athar-theme .filters-trigger { border-radius: 2px; border-color: #cfc1b3; background: #eee7dc; }
+.athar-theme .container--products-list .s-product-card-vertical .s-product-card-image img { object-fit: cover; padding: 0; }
+.athar-theme .cart-item {
+    background: #eee7dc !important;
+    border: 1px solid rgb(33 28 25 / 10%);
+    border-radius: 2px !important;
+    box-shadow: none;
+}
+.athar-theme .cart-item img { border-radius: 0 !important; background: #dfd3c6 !important; }
+.athar-theme .cart-item .item-price,
+.athar-theme .cart-item .item-total { color: var(--athar-wine) !important; }
+.athar-theme .no-content-placeholder,
+.athar-theme .content-entry,
+.athar-theme .account-inner { background: #eee7dc; color: var(--athar-ink); }
+
 @media (max-width:1023px) {
     .athar-nav__links { gap: 16px; }
     .athar-theme .athar-nav .inner { padding-inline: 20px; }
@@ -267,6 +351,8 @@ body.athar-theme.footer-is-light .store-footer__inner {
     .athar-marquee { padding-block: 7px; }
     .athar-marquee__group { gap: 28px; padding-inline: 14px; font-size: 13px; }
     .athar-theme .s-products-list-wrapper { gap: 18px 14px; grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .athar-products .s-products-list-wrapper { grid-template-columns: minmax(0,1fr); }
+    .athar-products .s-product-card-vertical .s-product-card-image { aspect-ratio: 1 / 1; }
     .athar-theme .s-product-card-content-title a { font-size: 16px; }
     .athar-theme .s-product-card-content-subtitle { font-size: 13px; }
     .athar-theme .s-product-card-vertical .s-product-card-image img { padding: 14px; }
@@ -306,6 +392,12 @@ body.athar-theme.footer-is-light .store-footer__inner {
     .athar-theme .athar-footer-intro { padding: 50px 24px; }
     .athar-theme .store-footer__inner,
     body.athar-theme.footer-is-light .store-footer__inner { padding-block: 40px; }
+    .athar-theme .container--product-details { margin-block: 0 45px; padding: 18px; }
+    .athar-theme .container--product-details > div { gap: 20px; }
+    .athar-theme .details-slider .swiper-slide { aspect-ratio: 4 / 3; }
+    .athar-theme .container--product-details .main-content { padding: 8px 4px 0; }
+    .athar-theme .container--product-details [data-testid='store-product-title'] { font-size: 30px; }
+    .athar-theme .container--products-list { padding-block: 18px 54px; }
 }
 
 /* Editorial mobile navigation: preserve Salla's nested-menu behavior, change only its skin. */

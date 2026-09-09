@@ -37,6 +37,28 @@ const initializeAthar = () => {
         });
     });
 
+    // Trial stores can retain navigation entries after their old catalog is removed.
+    // Keep Athar's fragrance navigation clean while Salla hydrates/rebuilds the menu.
+    const legacyFashionLabels = new Set([
+        'فساتين', 'الفساتين', 'بلايز', 'البلايز',
+        'تنانير', 'التنانير', 'جاكيتات', 'الجاكيتات'
+    ]);
+    const cleanLegacyNavigation = root => {
+        root.querySelectorAll?.('a').forEach(link => {
+            const label = link.textContent.replace(/\s+/g, ' ').trim();
+            if (!legacyFashionLabels.has(label)) return;
+            const item = link.closest('li');
+            (item || link).setAttribute('data-athar-legacy-category', 'hidden');
+        });
+    };
+    cleanLegacyNavigation(document);
+    const navigationObserver = new MutationObserver(records => {
+        records.forEach(record => record.addedNodes.forEach(node => {
+            if (node.nodeType === Node.ELEMENT_NODE) cleanLegacyNavigation(node);
+        }));
+    });
+    navigationObserver.observe(document.body, {childList:true, subtree:true});
+
     // Keep automatic storefronts compact when the connected demo catalog has no matching items.
     document.querySelectorAll('.athar-products salla-products-list, .athar-product-story salla-products-list').forEach(list => {
         const section = list.closest('.athar-products, .athar-product-story');

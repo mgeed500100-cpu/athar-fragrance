@@ -87,3 +87,13 @@ test('Athar skin covers the native mobile menu and light-footer mode', () => {
     assert.match(styles, /body\.athar-theme\.footer-is-light \.store-footer__inner/);
     assert.match(styles, /\.athar-theme \.store-footer \.copyright-text \*/);
 });
+test('catalog and native inner pages carry the Athar editorial treatment', () => {
+    const styles = read('src/assets/styles/06-athar/storefront.scss');
+    const script = read('src/assets/js/athar/storefront.js');
+    assert.match(styles, /\.container--product-details/);
+    assert.match(styles, /\.athar-products \.s-products-list-wrapper:has\(> :only-child\)/);
+    assert.match(styles, /\.athar-theme \.cart-item/);
+    assert.match(styles, /data-athar-legacy-category/);
+    assert.match(script, /legacyFashionLabels/);
+    assert.match(script, /cleanLegacyNavigation/);
+});
